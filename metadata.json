@@ -1,0 +1,6 @@
+{
+  "name": "KKVerse AI",
+  "description": "One Platform. Infinite Business Intelligence. Rebuilt from the ground up as a premium enterprise AI-powered BI platform with predictive forecasting, customer churn laboratory, sales analytics, and intelligent copilot.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

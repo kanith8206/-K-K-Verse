@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-brand-cyan: #4f46e5; /* indigo-600 */
+  --color-brand-emerald: #10b981; /* emerald-500 */
+  --color-brand-violet: #6366f1; /* indigo-500 */
+  --color-brand-amber: #f59e0b;
+}
+
+/* Custom premium glassmorphic backgrounds & animations */
+@layer utilities {
+  .glass-card {
+    background: rgba(15, 23, 42, 0.7); /* slate-900 */
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  .glass-card-light {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(15, 23, 42, 0.05);
+    box-shadow: 0 10px 30px 0 rgba(15, 23, 42, 0.03);
+  }
+
+  .glass-card-hover {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-card-hover:hover {
+    transform: translateY(-4px);
+    border-color: rgba(79, 70, 229, 0.3); /* indigo-600 */
+    box-shadow: 0 12px 40px 0 rgba(79, 70, 229, 0.15);
+  }
+
+  .glass-input {
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: #f8fafc;
+    transition: all 0.3s ease;
+  }
+
+  .glass-input:focus {
+    outline: none;
+    border-color: #6366f1; /* indigo-500 */
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.25);
+    background: rgba(15, 23, 42, 0.7);
+  }
+
+  .glass-input-light {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 8px;
+    color: #0f172a;
+    transition: all 0.3s ease;
+  }
+
+  .glass-input-light:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.15);
+    background: rgba(255, 255, 255, 0.98);
+  }
+
+  /* Shimmer glowing effect */
+  .glow-text-cyan {
+    text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+  }
+
+  .glow-text-emerald {
+    text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+  }
+}
+
+/* Custom premium animated scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 182, 212, 0.4);
+}
+
+/* Page transitions, skeletal pulses and loading states */
+@keyframes meshPulse {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.15);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+.mesh-glow-1 {
+  animation: meshPulse 18s infinite ease-in-out;
+}
+
+.mesh-glow-2 {
+  animation: meshPulse 24s infinite ease-in-out alternate;
+}
+
+.mesh-glow-3 {
+  animation: meshPulse 15s infinite ease-in-out;
+}
